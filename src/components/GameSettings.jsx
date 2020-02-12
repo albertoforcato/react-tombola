@@ -2,43 +2,50 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { changePrizeActivation } from "../actions/prizeAction";
-import styled from "styled-components";
-
-const InlineText = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const SinglePrize = styled.div`
-  padding-left: 10px;
-  padding-right: 10px;
-`;
 
 const GameSettings = props => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  console.log(props);
+  //console.log(props);
   const { prizes } = props;
+
+  const handleCheckChange = e => {
+    console.log(props, e.target.value);
+    props.changePrizeActivation(parseInt(e.target.value));
+    console.log(props);
+  };
 
   const prizesList = prizes.map(prize => {
     return (
-      <SinglePrize className="text disabled" key={prize.id}>
-        <h4>{prize.name}</h4>
-      </SinglePrize>
+      <div className="from-check form-check-inline" key={prize.id}>
+        <input
+          type="checkbox"
+          className="form-check-input"
+          defaultChecked={prize.activated}
+          onChange={handleCheckChange}
+        />
+        <label htmlFor={`gridCheck${prize.id}`} className="form-check-label">
+          {prize.name}
+        </label>
+      </div>
     );
   });
 
   return (
     <form>
-      <InlineText className="form-group">{prizesList}</InlineText>
       <div className="form-group">
-      <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'/>
+        <label className="form-check-label" htmlFor="inlineCheckbox1">
+          {t("setting-tip")}
+        </label>
       </div>
-      <small className="from-text text-muted">{t("Welcome to React")}</small>
-      <div className="from-group"></div>
-      <div className="form-group from-check"></div>
-      <button className="btn btn-primary btn-black">Submit</button>
+      <div className="form-group d-flex flex-wrap justify-content-lg-between justify-content-md-between justify-content-xs-center">
+        {prizesList}
+      </div>
+      <div className="d-flex justify-content-center ">
+        <button className="btn btn-primary text-wrap" type="submit" style={{}}>
+          {t("start-the-game")}
+        </button>
+      </div>
     </form>
   );
 };

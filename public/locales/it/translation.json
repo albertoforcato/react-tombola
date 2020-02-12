@@ -1,3 +1,6 @@
 {
-    "Welcome to React": "Benvenuto in React e react-i18next"
+    "Welcome to React": "Benvenuto in React e react-i18next",
+    "start-the-game": "Inizia a giocare",
+    "ambo": "Ambo",
+    "tombola": "Tombola"
 }
