@@ -6,7 +6,8 @@ const initState = {
     { id: 4, name: "cinquina", checked: true },
     { id: 5, name: "tombola", checked: true },
     { id: 6, name: "tombolino", checked: true }
-  ]
+  ],
+  automaticDraw: false
 };
 
 const rootReducer = (state = initState, action) => {
@@ -20,12 +21,16 @@ const rootReducer = (state = initState, action) => {
         }
         return p;
       });
-
-      console.log("New Prizes ", newPrizes);
-
+      
       return {
         ...state,
         prizes: newPrizes
+      };
+    }
+    case "CHANGE_AUTOMATIC_DRAW_STATE": {
+      return {
+        ...state,
+        automaticDraw: !state.automaticDraw
       };
     }
     default: {

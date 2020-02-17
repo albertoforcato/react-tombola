@@ -1,46 +1,31 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import { changePrizeActivation } from "../actions/prizeAction";
+import {
+  changeAutomaticDrawState,
+  changePrizeActivation
+} from "../actions/prizeAction";
+import InlineCheckboxList from "./generic-components/InlineCheckboxList";
+import { Link } from "react-router-dom";
 
 const GameSettings = () => {
   const { t } = useTranslation();
   const prizes = useSelector(state => state.prizes);
+  const automaticDraw = useSelector(state => state.automaticDraw);
   const dispatch = useDispatch();
 
-  const handleCheckChange = e => {
-    dispatch(changePrizeActivation(parseInt(e.target.id)));
+  const handleSwitchChange = () => {
+    dispatch(changeAutomaticDrawState());
   };
-
-  const prizesList = prizes.map(prize => {
-    return (
-      <div
-        className="custom-control custom-checkbox custom-control-inline"
-        key={prize.id}
-      >
-        <input
-          type="checkbox"
-          className="custom-control-input"
-          onChange={handleCheckChange}
-          defaultChecked={prize.checked}
-          id={prize.id}
-        />
-        <label htmlFor={prize.id} className="custom-control-label">
-          {t(prize.name)}
-        </label>
-      </div>
-    );
-  });
-
-  setInterval(() => console.log(prizes), 5000);
 
   return (
     <form>
       <div className="form-group">
-        <div className="d-flex flex-wrap justify-content-lg-between justify-content-md-between justify-content-xs-center">
-          {prizesList}
-        </div>
-        <small className="form-check-label">{t("settings-checkbox-tip")}</small>
+        <InlineCheckboxList
+          items={prizes}
+          handleFunction={changePrizeActivation}
+          labelTip={t("settings-checkbox-tip")}
+        />
       </div>
 
       <div className="form-group d-flex flex-wrap">
@@ -48,6 +33,8 @@ const GameSettings = () => {
           <input
             type="checkbox"
             className="custom-control-input"
+            onChange={handleSwitchChange}
+            defaultChecked={automaticDraw}
             id="customSwitch1"
           />
           <label className="custom-control-label" htmlFor="customSwitch1">
@@ -55,11 +42,11 @@ const GameSettings = () => {
           </label>
         </div>
       </div>
-      
+
       <div className="d-flex justify-content-center ">
-        <button className="btn btn-primary text-wrap" type="submit">
+        <Link to={`/tombola_game`} className="btn btn-primary text-wrap" type="submit">
           {t("start-the-game")}
-        </button>
+        </Link>
       </div>
     </form>
   );
