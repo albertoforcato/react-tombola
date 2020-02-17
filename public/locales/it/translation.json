@@ -2,5 +2,11 @@
     "Welcome to React": "Benvenuto in React e react-i18next",
     "start-the-game": "Inizia a giocare",
     "ambo": "Ambo",
-    "tombola": "Tombola"
+    "terna": "Terna",
+    "quaterna": "Quaterna",
+    "cinquina": "Cinquina",
+    "tombola": "Tombola",
+    "tombolino": "Tombolino",
+    "automatic-draw": "Estrazione automatica",
+    "settings-checkbox-tip": "Seleziona i premi"
 }

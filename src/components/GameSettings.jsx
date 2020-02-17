@@ -1,48 +1,63 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { changePrizeActivation } from "../actions/prizeAction";
 
-const GameSettings = props => {
+const GameSettings = () => {
   const { t } = useTranslation();
-
-  //console.log(props);
-  const { prizes } = props;
+  const prizes = useSelector(state => state.prizes);
+  const dispatch = useDispatch();
 
   const handleCheckChange = e => {
-    console.log(props, e.target.value);
-    props.changePrizeActivation(parseInt(e.target.value));
-    console.log(props);
+    dispatch(changePrizeActivation(parseInt(e.target.id)));
   };
 
   const prizesList = prizes.map(prize => {
     return (
-      <div className="from-check form-check-inline" key={prize.id}>
+      <div
+        className="custom-control custom-checkbox custom-control-inline"
+        key={prize.id}
+      >
         <input
           type="checkbox"
-          className="form-check-input"
-          defaultChecked={prize.activated}
+          className="custom-control-input"
           onChange={handleCheckChange}
+          defaultChecked={prize.checked}
+          id={prize.id}
         />
-        <label htmlFor={`gridCheck${prize.id}`} className="form-check-label">
-          {prize.name}
+        <label htmlFor={prize.id} className="custom-control-label">
+          {t(prize.name)}
         </label>
       </div>
     );
   });
 
+  setInterval(() => console.log(prizes), 5000);
+
   return (
     <form>
       <div className="form-group">
-        <label className="form-check-label" htmlFor="inlineCheckbox1">
-          {t("setting-tip")}
-        </label>
+        <div className="d-flex flex-wrap justify-content-lg-between justify-content-md-between justify-content-xs-center">
+          {prizesList}
+        </div>
+        <small className="form-check-label">{t("settings-checkbox-tip")}</small>
       </div>
-      <div className="form-group d-flex flex-wrap justify-content-lg-between justify-content-md-between justify-content-xs-center">
-        {prizesList}
+
+      <div className="form-group d-flex flex-wrap">
+        <div className="custom-control custom-switch">
+          <input
+            type="checkbox"
+            className="custom-control-input"
+            id="customSwitch1"
+          />
+          <label className="custom-control-label" htmlFor="customSwitch1">
+            {t("automatic-draw")}
+          </label>
+        </div>
       </div>
+      
       <div className="d-flex justify-content-center ">
-        <button className="btn btn-primary text-wrap" type="submit" style={{}}>
+        <button className="btn btn-primary text-wrap" type="submit">
           {t("start-the-game")}
         </button>
       </div>
@@ -50,18 +65,4 @@ const GameSettings = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    prizes: state.prizes
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changePrizeActivation: id => {
-      dispatch(changePrizeActivation(id));
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(GameSettings);
+export default GameSettings;
