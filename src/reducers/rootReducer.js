@@ -7,7 +7,9 @@ const initState = {
     { id: 5, name: "tombola", checked: true },
     { id: 6, name: "tombolino", checked: true }
   ],
-  automaticDraw: false
+  automaticDraw: false,
+  numbers: null,
+  currentNumber: "#"
 };
 
 const rootReducer = (state = initState, action) => {
@@ -32,6 +34,20 @@ const rootReducer = (state = initState, action) => {
         ...state,
         automaticDraw: !state.automaticDraw
       };
+    }
+    case "ADD_INITIAL_NUMBERS": {
+      console.log(action.numbers);
+      return {
+        ...state,
+        numbers: action.numbers
+      }
+    }
+    case "CHANGE_CURRENT_NUMBER": {
+      let cn = action.currentNumber;
+      return {
+        ...state,
+        currentNumber: cn
+      }
     }
     default: {
       return {...state};
