@@ -18,9 +18,9 @@ export const addInitialNumbers = (numbers) => {
     }
 }
 
-export const changeCurrentNumber = (currentNumber) => {
+export const addDrewNumber = (drewNumber) => {
     return{
-        type: "CHANGE_CURRENT_NUMBER",
-        currentNumber
+        type: "ADD_DREW_NUMBER",
+        drewNumber
     }
 }

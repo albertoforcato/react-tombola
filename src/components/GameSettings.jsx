@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const GameSettings = () => {
   const { t } = useTranslation();
-  const prizes = useSelector(state => state.prizes);
-  const automaticDraw = useSelector(state => state.automaticDraw);
+  const prizes = useSelector(state => state.managePrizesSettings.prizes);
+  const automaticDraw = useSelector(state => state.managePrizesSettings.automaticDraw);
   const dispatch = useDispatch();
 
   const handleSwitchChange = () => {

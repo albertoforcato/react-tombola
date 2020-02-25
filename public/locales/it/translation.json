@@ -8,5 +8,9 @@
     "tombola": "Tombola",
     "tombolino": "Tombolino",
     "automatic-draw": "Estrazione automatica",
-    "settings-checkbox-tip": "Seleziona i premi"
+    "settings-checkbox-tip": "Seleziona i premi",
+    "last-draw-number": "Ultimo numero estratto",
+    "actual-prize": "Premio attualmente in palio",
+    "go-back": "Torna indietro",
+    "go-forth": "Vai avanti"
 }

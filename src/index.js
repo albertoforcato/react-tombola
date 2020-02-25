@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./reducers/rootReducer";
+import reducer from "./reducers";
 import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
@@ -18,7 +18,7 @@ const composeEnhancers = composeWithDevTools({
 });
 
 const store = createStore(
-  rootReducer,
+  reducer,
   composeEnhancers(applyMiddleware(thunk))
   // other store enhancers if any
 );

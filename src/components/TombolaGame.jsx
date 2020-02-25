@@ -1,34 +1,12 @@
+import SummaryBox from "./SummaryBox";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { RotateCcw, RotateCw, Settings } from "react-feather";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { addInitialNumbers, changeCurrentNumber } from "../actions/prizeAction";
-
-const StyledButton = styled.div`
-  pointer-events: none;
-  position: relative;
-  width: 50%;
-  padding-bottom: 50%;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-
-  div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 6vw;
-    transform: translate(-50%, -50%);
-  }
-`;
+import { addInitialNumbers, addDrewNumber } from "../actions/prizeAction";
 
 const TombolaGame = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-
-  const currentNumber = useSelector(state=> state.currentNumber);
 
   //const initialNumbers2 = mathUtils.range(1, 90);
   const initialNumbers = mathUtils.range(1, 90);
@@ -37,13 +15,13 @@ const TombolaGame = () => {
 
   useEffect(() => {
     dispatch(addInitialNumbers(initialNumbers));
-  });
+  }, []);
 
   console.log(gameNumber);
 
   const handleNumberClick = e => {
     console.log(e);
-    dispatch(changeCurrentNumber(e));
+    dispatch(addDrewNumber(e));
   };
 
   const SingleItems = ({ array }) => {
@@ -85,64 +63,18 @@ const TombolaGame = () => {
     );
   };
 
-  const GameBoxes = () => {
+  const GameBox = () => {
     return (
       <div className="card">
         <div className="card-header">
           <div className="card-title">
-            {t("actual-prize")}: {t(`${gameNumber[0]}`)}
+            {t("actual-prize")}: {t("tombola")}
           </div>
         </div>
         <div className="card-body">
           <div className="container-fluid">
             <div className="row my-3">
               <SingleBox array={gameNumber} />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const SummaryBox = () => {
-    return (
-      <div className="card">
-        <div className="card-body">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="card">
-                  <div className="card-header">
-                    <div className="card-title">{t("last-draw-number")}</div>
-                  </div>
-                  <div className="card-body d-flex justify-content-center">
-                    <StyledButton>
-                      <div>{currentNumber}</div>
-                    </StyledButton>
-                  </div>
-                  <div className="card-footer d-flex flex-wrap justify-content-between">
-                    <div className="btn-group d-flex ">
-                      <div
-                        className="btn btn-sm btn-warning mx-1 my-1"
-                        data-toggle="back-arrow"
-                        title={t("go-back")}
-                      >
-                        <RotateCcw size="20" color="white" />
-                      </div>
-                      <div
-                        className="btn btn-sm btn-warning mx-1 my-1"
-                        data-toggle="forth-arrow"
-                        title={t("go-forth")}
-                      >
-                        <RotateCw size="20" color="white" />
-                      </div>
-                    </div>
-                    <div className="btn btn-sm btn-danger mx-1 my-1">
-                      <Settings size="20" color="white" />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -159,7 +91,7 @@ const TombolaGame = () => {
           </div>
 
           <div className="col-xl-8             col-md-8             col-12 order-md-0">
-            <GameBoxes />
+            <GameBox />
           </div>
         </div>
       </div>
