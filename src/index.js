@@ -6,9 +6,10 @@ import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers";
-import thunk from 'redux-thunk';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
+import "bootstrap/dist/css/bootstrap.css";
 
 // import i18n (needs to be bundled ;))
 import "./i18n";
