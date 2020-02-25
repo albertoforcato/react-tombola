@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/tombola-react/static/css/main.ccc70576.chunk.css",
-    "main.js": "/tombola-react/static/js/main.904a06f4.chunk.js",
-    "main.js.map": "/tombola-react/static/js/main.904a06f4.chunk.js.map",
-    "runtime-main.js": "/tombola-react/static/js/runtime-main.1a863a26.js",
-    "runtime-main.js.map": "/tombola-react/static/js/runtime-main.1a863a26.js.map",
-    "static/js/2.5fbcba4c.chunk.js": "/tombola-react/static/js/2.5fbcba4c.chunk.js",
-    "static/js/2.5fbcba4c.chunk.js.map": "/tombola-react/static/js/2.5fbcba4c.chunk.js.map",
-    "index.html": "/tombola-react/index.html",
-    "precache-manifest.b56778581103606cc308db7d895f1366.js": "/tombola-react/precache-manifest.b56778581103606cc308db7d895f1366.js",
-    "service-worker.js": "/tombola-react/service-worker.js",
-    "static/css/main.ccc70576.chunk.css.map": "/tombola-react/static/css/main.ccc70576.chunk.css.map",
-    "static/js/2.5fbcba4c.chunk.js.LICENSE.txt": "/tombola-react/static/js/2.5fbcba4c.chunk.js.LICENSE.txt"
+    "main.css": "/react-tombola/static/css/main.ccc70576.chunk.css",
+    "main.js": "/react-tombola/static/js/main.4d557cfe.chunk.js",
+    "main.js.map": "/react-tombola/static/js/main.4d557cfe.chunk.js.map",
+    "runtime-main.js": "/react-tombola/static/js/runtime-main.821cdeeb.js",
+    "runtime-main.js.map": "/react-tombola/static/js/runtime-main.821cdeeb.js.map",
+    "static/js/2.95eb6866.chunk.js": "/react-tombola/static/js/2.95eb6866.chunk.js",
+    "static/js/2.95eb6866.chunk.js.map": "/react-tombola/static/js/2.95eb6866.chunk.js.map",
+    "index.html": "/react-tombola/index.html",
+    "precache-manifest.b2727b3016b97aa0e66a356e2430a156.js": "/react-tombola/precache-manifest.b2727b3016b97aa0e66a356e2430a156.js",
+    "service-worker.js": "/react-tombola/service-worker.js",
+    "static/css/main.ccc70576.chunk.css.map": "/react-tombola/static/css/main.ccc70576.chunk.css.map",
+    "static/js/2.95eb6866.chunk.js.LICENSE.txt": "/react-tombola/static/js/2.95eb6866.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1a863a26.js",
-    "static/js/2.5fbcba4c.chunk.js",
+    "static/js/runtime-main.821cdeeb.js",
+    "static/js/2.95eb6866.chunk.js",
     "static/css/main.ccc70576.chunk.css",
-    "static/js/main.904a06f4.chunk.js"
+    "static/js/main.4d557cfe.chunk.js"
   ]
 }
