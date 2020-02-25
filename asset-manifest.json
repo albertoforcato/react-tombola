@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tombola-react/static/css/main.ccc70576.chunk.css",
+    "main.js": "/tombola-react/static/js/main.904a06f4.chunk.js",
+    "main.js.map": "/tombola-react/static/js/main.904a06f4.chunk.js.map",
+    "runtime-main.js": "/tombola-react/static/js/runtime-main.1a863a26.js",
+    "runtime-main.js.map": "/tombola-react/static/js/runtime-main.1a863a26.js.map",
+    "static/js/2.5fbcba4c.chunk.js": "/tombola-react/static/js/2.5fbcba4c.chunk.js",
+    "static/js/2.5fbcba4c.chunk.js.map": "/tombola-react/static/js/2.5fbcba4c.chunk.js.map",
+    "index.html": "/tombola-react/index.html",
+    "precache-manifest.b56778581103606cc308db7d895f1366.js": "/tombola-react/precache-manifest.b56778581103606cc308db7d895f1366.js",
+    "service-worker.js": "/tombola-react/service-worker.js",
+    "static/css/main.ccc70576.chunk.css.map": "/tombola-react/static/css/main.ccc70576.chunk.css.map",
+    "static/js/2.5fbcba4c.chunk.js.LICENSE.txt": "/tombola-react/static/js/2.5fbcba4c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a863a26.js",
+    "static/js/2.5fbcba4c.chunk.js",
+    "static/css/main.ccc70576.chunk.css",
+    "static/js/main.904a06f4.chunk.js"
+  ]
+}
