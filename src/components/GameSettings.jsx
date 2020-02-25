@@ -1,43 +1,55 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import FormGroup from 'react-bootstrap/FormGroup';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  changeAutomaticDrawState,
+  changePrizeActivation
+} from "../actions/prizeAction";
+import InlineCheckboxList from "./generic-components/InlineCheckboxList";
+import { Link } from "react-router-dom";
 
 const GameSettings = () => {
+  const { t } = useTranslation();
+  const prizes = useSelector(state => state.managePrizesSettings.prizes);
+  const automaticDraw = useSelector(state => state.managePrizesSettings.automaticDraw);
+  const dispatch = useDispatch();
 
-	const [prizes, setPrizes] = useState([
-		{ id: 1, name: 'ambo' },
-		{ id: 1, name: 'terna' },
-		{ id: 1, name: 'quaterna' },
-		{ id: 1, name: 'cinquina' },
-		{ id: 1, name: 'tombola' },
-		{ id: 1, name: 'tombolino' }
-	]);
+  const handleSwitchChange = () => {
+    dispatch(changeAutomaticDrawState());
+  };
 
-	const prizeList = prizes.map(prize => {
-		return (
-			<Form.Check
-				inline
-				type={'checkbox'}
-				id={prize.id}
-				label={prize.name}
-			/>
-		);
-	});
+  return (
+    <form>
+      <div className="form-group">
+        <InlineCheckboxList
+          items={prizes}
+          handleFunction={changePrizeActivation}
+          labelTip={t("settings-checkbox-tip")}
+        />
+      </div>
 
-	return (
-		<Form className="">
-			<Form.Group controlId="checkPrizes" className="mb-3">
-				{prizeList}
-			</Form.Group>
-			<FormGroup controlId="checkPrizes" className="mb-3">
-				<Form.Check type="switch" id="custom-switch" label="Estrazione automatica" />
-			</FormGroup>
-			<Button variant="primary" type="submit">
-				Submit
-      </Button>
-		</Form>
-	);
+      <div className="form-group d-flex flex-wrap">
+        <div className="custom-control custom-switch">
+          <input
+            type="checkbox"
+            className="custom-control-input"
+            onChange={handleSwitchChange}
+            defaultChecked={automaticDraw}
+            id="customSwitch1"
+          />
+          <label className="custom-control-label" htmlFor="customSwitch1">
+            {t("automatic-draw")}
+          </label>
+        </div>
+      </div>
+
+      <div className="d-flex justify-content-center ">
+        <Link to={`/tombola_game`} className="btn btn-primary text-wrap" type="submit">
+          {t("start-the-game")}
+        </Link>
+      </div>
+    </form>
+  );
 };
 
 export default GameSettings;
