@@ -1,0 +1,21 @@
+{
+    "welcome-page": {
+        "start-the-game": "Inizia a giocare",
+        "automatic-draw": "Estrazione automatica",
+        "settings-checkbox-tip": "Seleziona i premi",
+        "prizes": {
+            "ambo": "Ambo",
+            "terna": "Terna",
+            "quaterna": "Quaterna",
+            "cinquina": "Cinquina",
+            "tombola": "Tombola",
+            "tombolino": "Tombolino"
+        }
+    },
+    "game-page": {
+        "last-draw-number": "Ultimo numero estratto",
+        "actual-prize": "Premio attualmente in palio",
+        "go-back": "Torna indietro",
+        "go-forth": "Vai avanti"
+    }
+}

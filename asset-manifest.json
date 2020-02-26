@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/react-tombola/static/css/main.a7a122c8.chunk.css",
-    "main.js": "/react-tombola/static/js/main.0782f27b.chunk.js",
-    "main.js.map": "/react-tombola/static/js/main.0782f27b.chunk.js.map",
+    "main.js": "/react-tombola/static/js/main.a6492454.chunk.js",
+    "main.js.map": "/react-tombola/static/js/main.a6492454.chunk.js.map",
     "runtime-main.js": "/react-tombola/static/js/runtime-main.821cdeeb.js",
     "runtime-main.js.map": "/react-tombola/static/js/runtime-main.821cdeeb.js.map",
     "static/css/2.67123b20.chunk.css": "/react-tombola/static/css/2.67123b20.chunk.css",
-    "static/js/2.311ea8d1.chunk.js": "/react-tombola/static/js/2.311ea8d1.chunk.js",
-    "static/js/2.311ea8d1.chunk.js.map": "/react-tombola/static/js/2.311ea8d1.chunk.js.map",
+    "static/js/2.e5473c9f.chunk.js": "/react-tombola/static/js/2.e5473c9f.chunk.js",
+    "static/js/2.e5473c9f.chunk.js.map": "/react-tombola/static/js/2.e5473c9f.chunk.js.map",
     "index.html": "/react-tombola/index.html",
-    "precache-manifest.e4ef0c5deb66e66cb2e5d85aa7277895.js": "/react-tombola/precache-manifest.e4ef0c5deb66e66cb2e5d85aa7277895.js",
+    "precache-manifest.608006bffd99632a47cd06df8902081a.js": "/react-tombola/precache-manifest.608006bffd99632a47cd06df8902081a.js",
     "service-worker.js": "/react-tombola/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/react-tombola/static/css/2.67123b20.chunk.css.map",
     "static/css/main.a7a122c8.chunk.css.map": "/react-tombola/static/css/main.a7a122c8.chunk.css.map",
-    "static/js/2.311ea8d1.chunk.js.LICENSE.txt": "/react-tombola/static/js/2.311ea8d1.chunk.js.LICENSE.txt"
+    "static/js/2.e5473c9f.chunk.js.LICENSE.txt": "/react-tombola/static/js/2.e5473c9f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.821cdeeb.js",
     "static/css/2.67123b20.chunk.css",
-    "static/js/2.311ea8d1.chunk.js",
+    "static/js/2.e5473c9f.chunk.js",
     "static/css/main.a7a122c8.chunk.css",
-    "static/js/main.0782f27b.chunk.js"
+    "static/js/main.a6492454.chunk.js"
   ]
 }

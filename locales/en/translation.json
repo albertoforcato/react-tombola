@@ -1,0 +1,21 @@
+{
+    "welcome-page": {
+        "start-the-game": "START",
+        "automatic-draw": "Automatic draw",
+        "settings-checkbox-tip": "Select the prizes",
+        "prizes": {
+            "ambo": "Ambo",
+            "terna": "Terna",
+            "quaterna": "Quaterna",
+            "cinquina": "Cinquina",
+            "tombola": "Tombola",
+            "tombolino": "Tombolino"
+        }
+    },
+    "game-page": {
+        "last-draw-number": "Last draw number",
+        "actual-prize": "Actual prize",
+        "go-back": "Go back",
+        "go-forth": "Go forth"
+    }
+}
