@@ -3,6 +3,7 @@
         "start-the-game": "START",
         "automatic-draw": "Automatic draw",
         "settings-checkbox-tip": "Select the prizes",
+        "setting-title": "Settings",
         "prizes": {
             "ambo": "Ambo",
             "terna": "Terna",
@@ -17,5 +18,9 @@
         "actual-prize": "Actual prize",
         "go-back": "Go back",
         "go-forth": "Go forth"
+    },
+    "generics":{
+        "settings": "Settings",
+        "save": "Save"
     }
 }
