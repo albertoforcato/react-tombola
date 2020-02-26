@@ -1,8 +1,21 @@
 {
-    "Welcome to React": "Welcome to React and react-i18next",
-    "start-the-game": "Start the game",
-    "ambo": "Ambo pizza!!",
-    "tombola": "Italian Tombola!",
-    "automatic-draw": "Automatic draw",
-    "settings-checkbox-tip": "Select game prizes"
+    "welcome-page": {
+        "start-the-game": "START",
+        "automatic-draw": "Automatic draw",
+        "settings-checkbox-tip": "Select the prizes",
+        "prizes": {
+            "ambo": "Ambo",
+            "terna": "Terna",
+            "quaterna": "Quaterna",
+            "cinquina": "Cinquina",
+            "tombola": "Tombola",
+            "tombolino": "Tombolino"
+        }
+    },
+    "game-page": {
+        "last-draw-number": "Last draw number",
+        "actual-prize": "Actual prize",
+        "go-back": "Go back",
+        "go-forth": "Go forth"
+    }
 }

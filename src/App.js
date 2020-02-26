@@ -6,12 +6,15 @@ import TombolaGame from "./components/TombolaGame";
 function App() {
   return (
     <Suspense fallback={<Loader />}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/tombola_game" component={TombolaGame}/>
+            <Route path="/tombola_game" component={TombolaGame} />
           </Switch>
+          <p>
+            {console.log("PUBLIC_URL: ", process.env.PUBLIC_URL)}
+          </p>
         </div>
       </BrowserRouter>
     </Suspense>

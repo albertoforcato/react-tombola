@@ -9,7 +9,7 @@ const Home = () => {
       <div className="row">
         <div className="card mx-5">
           <div className="card-body">
-            <h1 className="card-title">{t("tombola")}</h1>
+            <h1 className="card-title">{t("welcome-page.prizes.tombola")}</h1>
             <GameSettings />
           </div>
         </div>

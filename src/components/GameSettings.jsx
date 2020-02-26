@@ -24,7 +24,8 @@ const GameSettings = () => {
         <InlineCheckboxList
           items={prizes}
           handleFunction={changePrizeActivation}
-          labelTip={t("settings-checkbox-tip")}
+          labelTip={t("welcome-page.settings-checkbox-tip")}
+          i18nPath="welcome-page.prizes"
         />
       </div>
 
@@ -38,14 +39,14 @@ const GameSettings = () => {
             id="customSwitch1"
           />
           <label className="custom-control-label" htmlFor="customSwitch1">
-            {t("automatic-draw")}
+            {t("welcome-page.automatic-draw")}
           </label>
         </div>
       </div>
 
       <div className="d-flex justify-content-center ">
         <Link to={`/tombola_game`} className="btn btn-primary text-wrap" type="submit">
-          {t("start-the-game")}
+          {t("welcome-page.start-the-game")}
         </Link>
       </div>
     </form>

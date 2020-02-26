@@ -1,7 +1,7 @@
 import SummaryBox from "./SummaryBox";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addInitialNumbers, addDrewNumber } from "../actions/prizeAction";
 
 const TombolaGame = () => {
@@ -68,7 +68,7 @@ const TombolaGame = () => {
       <div className="card">
         <div className="card-header">
           <div className="card-title">
-            {t("actual-prize")}: {t("tombola")}
+            {t("game-page.actual-prize")}: {t("welcome-page.prizes.tombola")}
           </div>
         </div>
         <div className="card-body">

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-const InlineCheckboxList = ({ items, handleFunction, labelTip }) => {
+const InlineCheckboxList = ({ items, handleFunction, labelTip, i18nPath }) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const InlineCheckboxList = ({ items, handleFunction, labelTip }) => {
           id={item.id}
         />
         <label htmlFor={item.id} className="custom-control-label">
-          {t(item.name)}
+          {t(`${i18nPath}.${item.name}`)}
         </label>
       </div>
     );

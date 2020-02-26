@@ -51,7 +51,7 @@ const SummaryBox = () => {
             <div className="col">
               <div className="card">
                 <div className="card-header">
-                  <div className="card-title">{t("last-draw-number")}</div>
+                  <div className="card-title">{t("game-page.last-draw-number")}</div>
                 </div>
                 <div className="card-body d-flex justify-content-center">
                   <StyledButton>
@@ -71,7 +71,7 @@ const SummaryBox = () => {
                     <button
                       className="btn btn-sm btn-warning mx-1 my-1"
                       data-toggle="back-arrow"
-                      title={t("go-back")}
+                      title={t("game-page.go-back")}
                       onClick={() => handleBackArrowClick()}
                       disabled={!canUndo}
                     >
@@ -80,7 +80,7 @@ const SummaryBox = () => {
                     <button
                       className="btn btn-sm btn-warning mx-1 my-1"
                       data-toggle="forth-arrow"
-                      title={t("go-forth")}
+                      title={t("game-page.go-forth")}
                       onClick={() => handleForthArrowClick()}
                       disabled={!canRedo}
                     >
