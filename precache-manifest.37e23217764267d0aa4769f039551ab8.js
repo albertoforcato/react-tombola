@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "315d13948e8e0d3fbdc000de026dfc7a",
+    "revision": "6d2eb6c7b930006c38e4b0d6e30c5b5e",
     "url": "/react-tombola/index.html"
   },
   {
