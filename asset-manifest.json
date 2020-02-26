@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-tombola/static/css/main.a7a122c8.chunk.css",
-    "main.js": "/react-tombola/static/js/main.400a269e.chunk.js",
-    "main.js.map": "/react-tombola/static/js/main.400a269e.chunk.js.map",
+    "main.js": "/react-tombola/static/js/main.b84821b5.chunk.js",
+    "main.js.map": "/react-tombola/static/js/main.b84821b5.chunk.js.map",
     "runtime-main.js": "/react-tombola/static/js/runtime-main.821cdeeb.js",
     "runtime-main.js.map": "/react-tombola/static/js/runtime-main.821cdeeb.js.map",
     "static/css/2.67123b20.chunk.css": "/react-tombola/static/css/2.67123b20.chunk.css",
     "static/js/2.e5473c9f.chunk.js": "/react-tombola/static/js/2.e5473c9f.chunk.js",
     "static/js/2.e5473c9f.chunk.js.map": "/react-tombola/static/js/2.e5473c9f.chunk.js.map",
     "index.html": "/react-tombola/index.html",
-    "precache-manifest.9cec93723af7e0a2943f200f6ffe9a56.js": "/react-tombola/precache-manifest.9cec93723af7e0a2943f200f6ffe9a56.js",
+    "precache-manifest.9d24f0c53a35b8d4b284a8b9e3c083e4.js": "/react-tombola/precache-manifest.9d24f0c53a35b8d4b284a8b9e3c083e4.js",
     "service-worker.js": "/react-tombola/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/react-tombola/static/css/2.67123b20.chunk.css.map",
     "static/css/main.a7a122c8.chunk.css.map": "/react-tombola/static/css/main.a7a122c8.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.67123b20.chunk.css",
     "static/js/2.e5473c9f.chunk.js",
     "static/css/main.a7a122c8.chunk.css",
-    "static/js/main.400a269e.chunk.js"
+    "static/js/main.b84821b5.chunk.js"
   ]
 }
