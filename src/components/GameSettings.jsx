@@ -6,12 +6,13 @@ import {
   changePrizeActivation
 } from "../actions/prizeAction";
 import InlineCheckboxList from "./generic-components/InlineCheckboxList";
-import { Link } from "react-router-dom";
 
 const GameSettings = () => {
   const { t } = useTranslation();
   const prizes = useSelector(state => state.managePrizesSettings.prizes);
-  const automaticDraw = useSelector(state => state.managePrizesSettings.automaticDraw);
+  const automaticDraw = useSelector(
+    state => state.managePrizesSettings.automaticDraw
+  );
   const dispatch = useDispatch();
 
   const handleSwitchChange = () => {
@@ -44,11 +45,11 @@ const GameSettings = () => {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center ">
+      {/* <div className="d-flex justify-content-center ">
         <Link to={`/tombola_game`} className="btn btn-primary text-wrap" type="submit">
           {t("welcome-page.start-the-game")}
         </Link>
-      </div>
+      </div> */}
     </form>
   );
 };

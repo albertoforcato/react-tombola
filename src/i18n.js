@@ -5,7 +5,7 @@ import I18NextXhrBackend from "i18next-xhr-backend";
 
 const options = {
   fallbackLng: "it",
-  debug: true,
+  debug: false,
   interpolation: {
     escapeValue: false
   },

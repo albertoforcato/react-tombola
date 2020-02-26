@@ -23,7 +23,7 @@ const StyledButton = styled.div`
     transform: translate(-50%, -50%);
   }
 `;
-const SummaryBox = () => {
+const SummaryBox = ({ toggleModal }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const presentStateDrawNumbers = useSelector(
@@ -32,17 +32,57 @@ const SummaryBox = () => {
 
   const canUndo = useSelector(state => state.drewNumbers.past.length) > 0;
   const canRedo = useSelector(state => state.drewNumbers.future.length) > 0;
-  console.log(canUndo, canRedo);
+  //console.log(canUndo, canRedo);
 
   const handleBackArrowClick = () => {
-    console.log("UNDO");
+    //console.log("UNDO");
     dispatch(UndoActionCreators.undo());
   };
 
   const handleForthArrowClick = () => {
-    console.log("REDO");
+    //console.log("REDO");
     dispatch(UndoActionCreators.redo());
   };
+
+  const handleSettingsClick = () => {
+    //console.log("SETTINGS");
+    toggleModal();
+  };
+
+  const SummaryBoxFooter = () => {
+    return (
+      <>
+        <div className="btn-group d-flex ">
+          <button
+            className="btn btn-sm btn-warning mx-1 my-1"
+            data-toggle="back-arrow"
+            title={t("game-page.go-back")}
+            onClick={() => handleBackArrowClick()}
+            disabled={!canUndo}
+          >
+            <RotateCcw size="20" color="white" />
+          </button>
+          <button
+            className="btn btn-sm btn-warning mx-1 my-1"
+            data-toggle="forth-arrow"
+            title={t("game-page.go-forth")}
+            onClick={() => handleForthArrowClick()}
+            disabled={!canRedo}
+          >
+            <RotateCw size="20" color="white" />
+          </button>
+        </div>
+        <div className="btn btn-sm btn-danger mx-1 my-1">
+          <Settings
+            size="20"
+            color="white"
+            onClick={() => handleSettingsClick()}
+          />
+        </div>
+      </>
+    );
+  };
+
   return (
     <div className="card">
       <div className="card-body">
@@ -51,7 +91,9 @@ const SummaryBox = () => {
             <div className="col">
               <div className="card">
                 <div className="card-header">
-                  <div className="card-title">{t("game-page.last-draw-number")}</div>
+                  <div className="card-title">
+                    {t("game-page.last-draw-number")}
+                  </div>
                 </div>
                 <div className="card-body d-flex justify-content-center">
                   <StyledButton>
@@ -67,29 +109,7 @@ const SummaryBox = () => {
                   </StyledButton>
                 </div>
                 <div className="card-footer d-flex flex-wrap justify-content-between">
-                  <div className="btn-group d-flex ">
-                    <button
-                      className="btn btn-sm btn-warning mx-1 my-1"
-                      data-toggle="back-arrow"
-                      title={t("game-page.go-back")}
-                      onClick={() => handleBackArrowClick()}
-                      disabled={!canUndo}
-                    >
-                      <RotateCcw size="20" color="white" />
-                    </button>
-                    <button
-                      className="btn btn-sm btn-warning mx-1 my-1"
-                      data-toggle="forth-arrow"
-                      title={t("game-page.go-forth")}
-                      onClick={() => handleForthArrowClick()}
-                      disabled={!canRedo}
-                    >
-                      <RotateCw size="20" color="white" />
-                    </button>
-                  </div>
-                  <div className="btn btn-sm btn-danger mx-1 my-1">
-                    <Settings size="20" color="white" />
-                  </div>
+                  <SummaryBoxFooter/>
                 </div>
               </div>
             </div>

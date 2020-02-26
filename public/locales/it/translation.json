@@ -17,5 +17,9 @@
         "actual-prize": "Premio attualmente in palio",
         "go-back": "Torna indietro",
         "go-forth": "Vai avanti"
+    },
+    "generics":{
+        "settings": "Impostazioni",
+        "save": "Salva"
     }
 }

@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
 import TombolaGame from "./components/TombolaGame";
 
 function App() {
@@ -9,12 +8,8 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/tombola_game" component={TombolaGame} />
+            <Route exact path="/" component={TombolaGame} />
           </Switch>
-          <p>
-            {console.log("PUBLIC_URL: ", process.env.PUBLIC_URL)}
-          </p>
         </div>
       </BrowserRouter>
     </Suspense>

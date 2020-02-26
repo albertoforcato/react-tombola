@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const managePrizesSettings = (state = initialState, action) => {
-  console.log("ACTION: ", action);
+  //console.log("ACTION: ", action);
 
   switch (action.type) {
     case "CHANGE_PRIZE_ACTIVATION": {
@@ -34,7 +34,7 @@ const managePrizesSettings = (state = initialState, action) => {
       };
     }
     case "ADD_INITIAL_NUMBERS": {
-      console.log(action.numbers);
+      //console.log(action.numbers);
       return {
         ...state,
         numbers: action.numbers
