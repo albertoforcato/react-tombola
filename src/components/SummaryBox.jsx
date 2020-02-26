@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ActionCreators as UndoActionCreators } from "redux-undo";
 import { RotateCcw, RotateCw, Settings } from "react-feather";
+import mathUtils from "../utils/mathUtils";
 
 const StyledButton = styled.div`
   pointer-events: none;
@@ -34,6 +35,21 @@ const SummaryBox = ({ toggleModal }) => {
   const canRedo = useSelector(state => state.drewNumbers.future.length) > 0;
   //console.log(canUndo, canRedo);
 
+  const automaticDraw = useSelector(
+    state => state.managePrizesSettings.automaticDraw
+  );
+  console.log("AUTOMATIC DRAW", automaticDraw);
+
+  const drewNumbers = useSelector(state => state.drewNumbers.present);
+  //console.log(drewNumbers);
+  const availableNumbers = useSelector(
+    state => state.manageDrewNumbers.availableNumbers
+  );
+  //console.log(availableNumbers);
+
+  const presentNumber =
+    presentStateDrawNumbers[presentStateDrawNumbers.length - 1];
+
   const handleBackArrowClick = () => {
     //console.log("UNDO");
     dispatch(UndoActionCreators.undo());
@@ -49,7 +65,15 @@ const SummaryBox = ({ toggleModal }) => {
     toggleModal();
   };
 
-  const SummaryBoxFooter = () => {
+  const handleAutomaticDrawClick = () => {
+    let drawableNumbers = availableNumbers.filter(
+      el => !drewNumbers.includes(el)
+    );
+    let drewNumber = mathUtils.randomNumber(drawableNumbers);
+    console.log(drewNumber);
+  };
+
+  const SummaryBoxDrawFooter = () => {
     return (
       <>
         <div className="btn-group d-flex ">
@@ -83,35 +107,52 @@ const SummaryBox = ({ toggleModal }) => {
     );
   };
 
+  const SummaryBoxDraw = () => {
+    return (
+      <div className="card">
+        <div className="card-header">
+          <div className="card-title">{t("game-page.last-draw-number")}</div>
+        </div>
+        <div className="card-body d-flex justify-content-center">
+          <StyledButton>
+            <div>{presentNumber == null ? "#" : presentNumber}</div>
+          </StyledButton>
+        </div>
+        <div className="card-footer d-flex flex-wrap justify-content-between">
+          <SummaryBoxDrawFooter />
+        </div>
+      </div>
+    );
+  };
+
+  const SummaryBoxAutomaticDraw = () => {
+    return (
+      <div className="card">
+        <div className="card-body d-flex justify-content-center">
+          <button
+            className={`btn btn-success ${automaticDraw ? "" : "disabled"}`}
+            style={{ pointerEvents: automaticDraw ? "" : "none" }}
+            onClick={() => handleAutomaticDrawClick()}
+          >
+            {t("generics.draw")}
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="card">
       <div className="card-body">
         <div className="container">
           <div className="row">
             <div className="col">
-              <div className="card">
-                <div className="card-header">
-                  <div className="card-title">
-                    {t("game-page.last-draw-number")}
-                  </div>
-                </div>
-                <div className="card-body d-flex justify-content-center">
-                  <StyledButton>
-                    <div>
-                      {presentStateDrawNumbers[
-                        presentStateDrawNumbers.length - 1
-                      ] == null
-                        ? "#"
-                        : presentStateDrawNumbers[
-                            presentStateDrawNumbers.length - 1
-                          ]}
-                    </div>
-                  </StyledButton>
-                </div>
-                <div className="card-footer d-flex flex-wrap justify-content-between">
-                  <SummaryBoxFooter/>
-                </div>
-              </div>
+              <SummaryBoxDraw />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <SummaryBoxAutomaticDraw />
             </div>
           </div>
         </div>

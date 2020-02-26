@@ -9,12 +9,12 @@ const GameBox = ({ gameNumber }) => {
   const dispatch = useDispatch();
   const drewNumbers = useSelector(state => state.drewNumbers.present);
   //console.log(drewNumbers);
-  const handleDrawState = n => {};
-
+  const availableNumbers = useSelector(state => state.manageDrewNumbers.availableNumbers);
+  console.log(availableNumbers);
+  
   const handleNumberClick = number => {
     //console.log(number);
     dispatch(addDrewNumber(number));
-    handleDrawState(number);
   };
   const SingleItems = ({ array }) => {
     return (
@@ -30,8 +30,6 @@ const GameBox = ({ gameNumber }) => {
                   key={item}
                   value={item}
                   onClick={() => handleNumberClick(item)}
-                  data-toggle="button"
-                  aria-pressed="false"
                   style={{
                     pointerEvents: drewNumbers.includes(item) ? "none" : ""
                   }}

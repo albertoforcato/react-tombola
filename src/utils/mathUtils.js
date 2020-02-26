@@ -13,6 +13,10 @@ const mathUtils = {
     }
     //console.log(results);
     return results;
+  },
+
+  randomNumber: (array) => {
+      return array[Math.floor(Math.random() * array.length)];
   }
 };
 

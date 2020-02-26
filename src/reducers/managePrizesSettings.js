@@ -33,13 +33,6 @@ const managePrizesSettings = (state = initialState, action) => {
         automaticDraw: !state.automaticDraw
       };
     }
-    case "ADD_INITIAL_NUMBERS": {
-      //console.log(action.numbers);
-      return {
-        ...state,
-        numbers: action.numbers
-      };
-    }
     default: {
       return { ...state };
     }

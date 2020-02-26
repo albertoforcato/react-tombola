@@ -9,7 +9,7 @@ import GameBox from "./GameBox";
 const TombolaGame = () => {
   const dispatch = useDispatch();
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
     setShowModal(!showModal);

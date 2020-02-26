@@ -21,6 +21,7 @@
     },
     "generics":{
         "settings": "Settings",
-        "save": "Save"
+        "save": "Save",
+        "draw":"DRAW"
     }
 }

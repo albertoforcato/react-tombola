@@ -37,9 +37,9 @@ const GameSettings = () => {
             className="custom-control-input"
             onChange={handleSwitchChange}
             defaultChecked={automaticDraw}
-            id="customSwitch1"
+            id="automaticDrawSwitch"
           />
-          <label className="custom-control-label" htmlFor="customSwitch1">
+          <label className="custom-control-label" htmlFor="automaticDrawSwitch">
             {t("welcome-page.automatic-draw")}
           </label>
         </div>
