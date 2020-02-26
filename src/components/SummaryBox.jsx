@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { ActionCreators as UndoActionCreators } from "redux-undo";
 import { RotateCcw, RotateCw, Settings } from "react-feather";
 import mathUtils from "../utils/mathUtils";
+import { addDrewNumber } from "../actions/prizeAction";
 
 const StyledButton = styled.div`
   pointer-events: none;
@@ -70,6 +71,7 @@ const SummaryBox = ({ toggleModal }) => {
       el => !drewNumbers.includes(el)
     );
     let drewNumber = mathUtils.randomNumber(drawableNumbers);
+    dispatch(addDrewNumber(drewNumber));
     console.log(drewNumber);
   };
 
