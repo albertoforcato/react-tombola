@@ -11,7 +11,7 @@ const GameBox = ({ gameNumber }) => {
   //console.log(drewNumbers);
   const availableNumbers = useSelector(state => state.manageDrewNumbers.availableNumbers);
   console.log(availableNumbers);
-  
+
   const handleNumberClick = number => {
     //console.log(number);
     dispatch(addDrewNumber(number));
@@ -64,7 +64,7 @@ const GameBox = ({ gameNumber }) => {
     <div className="card">
       <div className="card-header">
         <div className="card-title">
-          {t("game-page.actual-prize")}: {t("welcome-page.prizes.tombola")}
+        <h2>{t("game-page.actual-prize")}: {t("welcome-page.prizes.tombola")}</h2> 
         </div>
       </div>
       <div className="card-body">

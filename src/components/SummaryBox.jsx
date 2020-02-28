@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -31,6 +31,7 @@ const SummaryBox = ({ toggleModal }) => {
   const presentStateDrawNumbers = useSelector(
     state => state.drewNumbers.present
   );
+  const [loadingNumber, setLoadingNumber] = useState(false);
 
   const canUndo = useSelector(state => state.drewNumbers.past.length) > 0;
   const canRedo = useSelector(state => state.drewNumbers.future.length) > 0;
@@ -67,12 +68,15 @@ const SummaryBox = ({ toggleModal }) => {
   };
 
   const handleAutomaticDrawClick = () => {
+    setLoadingNumber(true);
     let drawableNumbers = availableNumbers.filter(
       el => !drewNumbers.includes(el)
     );
     let drewNumber = mathUtils.randomNumber(drawableNumbers);
     dispatch(addDrewNumber(drewNumber));
     console.log(drewNumber);
+    setLoadingNumber(false);
+    // SET FUNCTION WITH TIMEOUT <- loading number: false
   };
 
   const SummaryBoxDrawFooter = () => {
@@ -117,7 +121,11 @@ const SummaryBox = ({ toggleModal }) => {
         </div>
         <div className="card-body d-flex justify-content-center">
           <StyledButton>
-            <div>{presentNumber == null ? "#" : presentNumber}</div>
+            {loadingNumber ? (
+              "INSERT HTML CODE SPINNER"
+            ) : (
+              <div>{presentNumber == null ? "#" : presentNumber}</div>
+            )}
           </StyledButton>
         </div>
         <div className="card-footer d-flex flex-wrap justify-content-between">
@@ -138,6 +146,31 @@ const SummaryBox = ({ toggleModal }) => {
           >
             {t("generics.draw")}
           </button>
+          {/* <form
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            target="_top"
+          >
+            <input type="hidden" name="cmd" value="_donations" />
+            <input type="hidden" name="business" value="D7XSCVKBLBVMG" />
+            <input type="hidden" name="currency_code" value="EUR" />
+            <input type="hidden" name="amount" value="1" />
+            <input
+              type="image"
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b7/PayPal_Logo_Icon_2014.svg"
+              border="0"
+              name="submit"
+              title="PayPal - The safer, easier way to pay online!"
+              alt="Donate with PayPal button"
+            />
+            <img
+              alt=""
+              border="0"
+              src="https://www.paypal.com/en_IT/i/scr/pixel.gif"
+              width="1"
+              height="1"
+            />
+          </form> */}
         </div>
       </div>
     );
