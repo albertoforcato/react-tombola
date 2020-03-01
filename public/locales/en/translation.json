@@ -20,6 +20,7 @@
         "go-forth": "Go forth"
     },
     "generics":{
+        "start-the-game": "START",
         "settings": "Settings",
         "save": "Save",
         "draw":"DRAW"

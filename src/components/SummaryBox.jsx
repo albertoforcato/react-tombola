@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -6,6 +6,8 @@ import { ActionCreators as UndoActionCreators } from "redux-undo";
 import { RotateCcw, RotateCw, Settings } from "react-feather";
 import mathUtils from "../utils/mathUtils";
 import { addDrewNumber } from "../actions/prizeAction";
+
+const ReactFitText = require("../../node_modules/react-fittext/lib/ReactFitText");
 
 const StyledButton = styled.div`
   pointer-events: none;
@@ -25,7 +27,8 @@ const StyledButton = styled.div`
     transform: translate(-50%, -50%);
   }
 `;
-const SummaryBox = ({ toggleModal }) => {
+
+const SummaryBox = (props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const presentStateDrawNumbers = useSelector(
@@ -64,7 +67,7 @@ const SummaryBox = ({ toggleModal }) => {
 
   const handleSettingsClick = () => {
     //console.log("SETTINGS");
-    toggleModal();
+    props.toggle();
   };
 
   const handleAutomaticDrawClick = () => {
@@ -79,105 +82,85 @@ const SummaryBox = ({ toggleModal }) => {
     // SET FUNCTION WITH TIMEOUT <- loading number: false
   };
 
-  const SummaryBoxDrawFooter = () => {
+  const SummaryBoxManageButtons = () => {
     return (
-      <>
-        <div className="btn-group d-flex ">
-          <button
-            className="btn btn-sm btn-warning mx-1 my-1"
-            data-toggle="back-arrow"
-            title={t("game-page.go-back")}
-            onClick={() => handleBackArrowClick()}
-            disabled={!canUndo}
-          >
-            <RotateCcw size="20" color="white" />
-          </button>
-          <button
-            className="btn btn-sm btn-warning mx-1 my-1"
-            data-toggle="forth-arrow"
-            title={t("game-page.go-forth")}
-            onClick={() => handleForthArrowClick()}
-            disabled={!canRedo}
-          >
-            <RotateCw size="20" color="white" />
-          </button>
+      <div className="card border-0">
+        <div className="card-body">
+          <div className="container">
+            <div className="row justify-content-between">
+              <div className="btn-group d-flex ">
+                <button
+                  className="btn btn-sm btn-warning mx-1 my-1"
+                  data-toggle="back-arrow"
+                  title={t("game-page.go-back")}
+                  onClick={() => handleBackArrowClick()}
+                  disabled={!canUndo}
+                >
+                  <RotateCcw size="20" color="white" />
+                </button>
+                <button
+                  className="btn btn-sm btn-warning mx-1 my-1"
+                  data-toggle="forth-arrow"
+                  title={t("game-page.go-forth")}
+                  onClick={() => handleForthArrowClick()}
+                  disabled={!canRedo}
+                >
+                  <RotateCw size="20" color="white" />
+                </button>
+              </div>
+              <div className="btn btn-sm btn-danger mx-1 my-1">
+                <Settings
+                  size="20"
+                  color="white"
+                  onClick={() => handleSettingsClick()}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="btn btn-sm btn-danger mx-1 my-1">
-          <Settings
-            size="20"
-            color="white"
-            onClick={() => handleSettingsClick()}
-          />
-        </div>
-      </>
+      </div>
     );
   };
 
   const SummaryBoxDraw = () => {
     return (
       <div className="card">
-        <div className="card-header">
-          <div className="card-title">{t("game-page.last-draw-number")}</div>
+        <div className="card-body">
+          <div className="row justify-content-center">
+            <h3 className="">{t("game-page.last-draw-number")}</h3>
+            
+          </div>
+          <div className="row justify-content-center">
+            <StyledButton className="my-4">
+              {loadingNumber ? (
+                "INSERT HTML CODE SPINNER"
+              ) : (
+                <div>{presentNumber == null ? "#" : presentNumber}</div>
+              )}
+            </StyledButton>
+          </div>
         </div>
-        <div className="card-body d-flex justify-content-center">
-          <StyledButton>
-            {loadingNumber ? (
-              "INSERT HTML CODE SPINNER"
-            ) : (
-              <div>{presentNumber == null ? "#" : presentNumber}</div>
-            )}
-          </StyledButton>
-        </div>
-        <div className="card-footer d-flex flex-wrap justify-content-between">
+        <div className="card-footer border-0 d-flex flex-wrap justify-content-center">
           <SummaryBoxDrawFooter />
         </div>
       </div>
     );
   };
 
-  const SummaryBoxAutomaticDraw = () => {
+  const SummaryBoxDrawFooter = () => {
     return (
-      <div className="card">
-        <div className="card-body d-flex justify-content-center">
-          <button
-            className={`btn btn-success ${automaticDraw ? "" : "disabled"}`}
-            style={{ pointerEvents: automaticDraw ? "" : "none" }}
-            onClick={() => handleAutomaticDrawClick()}
-          >
-            {t("generics.draw")}
-          </button>
-          {/* <form
-            action="https://www.paypal.com/cgi-bin/webscr"
-            method="post"
-            target="_top"
-          >
-            <input type="hidden" name="cmd" value="_donations" />
-            <input type="hidden" name="business" value="D7XSCVKBLBVMG" />
-            <input type="hidden" name="currency_code" value="EUR" />
-            <input type="hidden" name="amount" value="1" />
-            <input
-              type="image"
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b7/PayPal_Logo_Icon_2014.svg"
-              border="0"
-              name="submit"
-              title="PayPal - The safer, easier way to pay online!"
-              alt="Donate with PayPal button"
-            />
-            <img
-              alt=""
-              border="0"
-              src="https://www.paypal.com/en_IT/i/scr/pixel.gif"
-              width="1"
-              height="1"
-            />
-          </form> */}
-        </div>
-      </div>
+      <button
+        className={`btn btn-success ${automaticDraw ? "" : "disabled"}`}
+        style={{ pointerEvents: automaticDraw ? "" : "none" }}
+        onClick={() => handleAutomaticDrawClick()}
+      >
+        {t("generics.draw")}
+      </button>
     );
   };
 
   return (
-    <div className="card">
+    <div className="card border-0">
       <div className="card-body">
         <div className="container">
           <div className="row">
@@ -187,7 +170,7 @@ const SummaryBox = ({ toggleModal }) => {
           </div>
           <div className="row">
             <div className="col">
-              <SummaryBoxAutomaticDraw />
+              <SummaryBoxManageButtons />
             </div>
           </div>
         </div>

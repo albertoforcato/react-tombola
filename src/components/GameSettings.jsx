@@ -10,6 +10,7 @@ import InlineCheckboxList from "./generic-components/InlineCheckboxList";
 const GameSettings = () => {
   const { t } = useTranslation();
   const prizes = useSelector(state => state.managePrizesSettings.prizes);
+  
   const automaticDraw = useSelector(
     state => state.managePrizesSettings.automaticDraw
   );
@@ -22,12 +23,16 @@ const GameSettings = () => {
   return (
     <form>
       <div className="form-group">
+      <small className="form-check-label">{t("welcome-page.settings-checkbox-tip")}</small>
+        <div className="row">
         <InlineCheckboxList
           items={prizes}
           handleFunction={changePrizeActivation}
           labelTip={t("welcome-page.settings-checkbox-tip")}
           i18nPath="welcome-page.prizes"
         />
+        </div>
+        
       </div>
 
       <div className="form-group d-flex flex-wrap">
