@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-tombola/precache-manifest.e32abd28ac9236af8dc0f3be7414ea7c.js"
+  "/react-tombola/precache-manifest.7c5bc9e7d392ba278597c6e4d55eef90.js"
 );
 
 self.addEventListener('message', (event) => {

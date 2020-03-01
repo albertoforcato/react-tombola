@@ -1,6 +1,6 @@
 {
     "welcome-page": {
-        "start-the-game": "Inizia a giocare",
+        
         "automatic-draw": "Estrazione automatica",
         "settings-checkbox-tip": "Seleziona i premi",
         "prizes": {
@@ -19,6 +19,7 @@
         "go-forth": "Vai avanti"
     },
     "generics":{
+        "start-the-game": "Inizia a giocare",
         "settings": "Impostazioni",
         "save": "Salva",
         "draw":"ESTRAI"
