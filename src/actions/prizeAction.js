@@ -16,11 +16,18 @@ export const addInitialNumbers = (numbers) => {
         type: "ADD_INITIAL_NUMBERS",
         numbers
     }
-}
+};
 
 export const addDrewNumber = (drewNumber) => {
     return{
         type: "ADD_DREW_NUMBER",
         drewNumber
     }
-}
+};
+
+export const changeFirstViewToggle = () => {
+    return{
+        type: "CHANGE_FIRST_VIEW_TOGGLE"
+    }
+};
+

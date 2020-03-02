@@ -1,6 +1,6 @@
 {
     "welcome-page": {
-        "start-the-game": "Inizia a giocare",
+        
         "automatic-draw": "Estrazione automatica",
         "settings-checkbox-tip": "Seleziona i premi",
         "prizes": {
@@ -17,5 +17,11 @@
         "actual-prize": "Premio attualmente in palio",
         "go-back": "Torna indietro",
         "go-forth": "Vai avanti"
+    },
+    "generics":{
+        "start-the-game": "Inizia a giocare",
+        "settings": "Impostazioni",
+        "save": "Salva",
+        "draw":"ESTRAI"
     }
 }

@@ -7,11 +7,12 @@ const initialState = {
     { id: 5, name: "tombola", checked: true },
     { id: 6, name: "tombolino", checked: true }
   ],
-  automaticDraw: false
+  automaticDraw: false,
+  firstView: true
 };
 
 const managePrizesSettings = (state = initialState, action) => {
-  console.log("ACTION: ", action);
+  //console.log("ACTION: ", action);
 
   switch (action.type) {
     case "CHANGE_PRIZE_ACTIVATION": {
@@ -33,13 +34,12 @@ const managePrizesSettings = (state = initialState, action) => {
         automaticDraw: !state.automaticDraw
       };
     }
-    case "ADD_INITIAL_NUMBERS": {
-      console.log(action.numbers);
-      return {
+    case "CHANGE_FIRST_VIEW_TOGGLE":{
+      return{
         ...state,
-        numbers: action.numbers
+        firstView: !state.firstView
       };
-    }
+    } 
     default: {
       return { ...state };
     }

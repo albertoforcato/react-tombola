@@ -15,7 +15,7 @@ const drewNumber = (state, action) => {
 const drewNumbers = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_DREW_NUMBER": {
-        return [...state, drewNumber(undefined, action)];
+      return [...state, drewNumber(undefined, action)];
     }
     default:
       return state;
