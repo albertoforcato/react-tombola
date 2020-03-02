@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import drewNumbers from "./drewNumbers";
 import managePrizesSettings from "./managePrizesSettings";
 import manageDrewNumbers from "./manageDrewNumbers";
+import undoRedoManagement from "./undoRedoManagement";
 
 const tombolaApp = combineReducers({
-  drewNumbers,
+  undoRedoManagement,
   managePrizesSettings,
   manageDrewNumbers
 });

@@ -9,12 +9,12 @@ const SummaryBox = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <DrawCard />
+              <ManagementButtons />
             </div>
           </div>
           <div className="row">
             <div className="col">
-              <ManagementButtons />
+              <DrawCard />
             </div>
           </div>
         </div>

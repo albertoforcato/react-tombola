@@ -25,9 +25,9 @@ export const addDrewNumber = (drewNumber) => {
     }
 };
 
-export const changeFirstViewToggle = () => {
+export const switchInGameSettings = () => {
     return{
-        type: "CHANGE_FIRST_VIEW_TOGGLE"
+        type: "SWITCH_IN_GAME_SETTINGS"
     }
 };
 

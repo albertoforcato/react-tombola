@@ -23,6 +23,7 @@
         "start-the-game": "START",
         "settings": "Settings",
         "save": "Save",
-        "draw":"DRAW"
+        "draw":"DRAW",
+        "welcome": "Welcome!"
     }
 }
