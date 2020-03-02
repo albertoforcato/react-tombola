@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import CheckboxPrizesList from "../CheckboxPrizesList";
-import AutomaticDrawSwitch from "../AutomaticDrawSwitch";
+import CheckboxPrizesList from "./CheckboxPrizesList";
+import AutomaticDrawSwitch from "./AutomaticDrawSwitch";
 
 /**
  * The initial modal to show to let user changing game settings.
