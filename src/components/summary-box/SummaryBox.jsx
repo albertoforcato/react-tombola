@@ -4,10 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ActionCreators as UndoActionCreators } from "redux-undo";
 import { RotateCcw, RotateCw, Settings } from "react-feather";
-import mathUtils from "../utils/mathUtils";
-import { addDrewNumber } from "../actions/prizeAction";
-
-const ReactFitText = require("../../node_modules/react-fittext/lib/ReactFitText");
+import mathUtils from "../../utils/mathUtils";
+import { addDrewNumber } from "../../actions/prizeAction";
 
 const StyledButton = styled.div`
   pointer-events: none;
@@ -28,7 +26,7 @@ const StyledButton = styled.div`
   }
 `;
 
-const SummaryBox = (props) => {
+const SummaryBox = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const presentStateDrawNumbers = useSelector(
@@ -67,7 +65,7 @@ const SummaryBox = (props) => {
 
   const handleSettingsClick = () => {
     //console.log("SETTINGS");
-    props.toggle();
+    //props.toggle();
   };
 
   const handleAutomaticDrawClick = () => {
@@ -128,7 +126,6 @@ const SummaryBox = (props) => {
         <div className="card-body">
           <div className="row justify-content-center">
             <h3 className="">{t("game-page.last-draw-number")}</h3>
-            
           </div>
           <div className="row justify-content-center">
             <StyledButton className="my-4">
