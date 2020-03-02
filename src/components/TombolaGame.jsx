@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addInitialNumbers } from "../actions/prizeAction";
 import mathUtils from "../utils/mathUtils";
 import GameBox from "./GameBox";
-import InitialGameSettingsModal from "./game-settings/initial-game-settings/InitialGameSettingsModal";
+import InitialGameSettingsModal from "./initial-game-settings/InitialGameSettingsModal";
 
 const TombolaGame = () => {
   const dispatch = useDispatch();
