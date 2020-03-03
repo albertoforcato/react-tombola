@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5cd01220d5406fddc18b84ff16fa41b9",
+    "revision": "76ce2917c4d7ff7c56fba8bc7838e25e",
     "url": "/react-tombola/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-tombola/static/css/2.67123b20.chunk.css"
   },
   {
-    "revision": "8b5e94c4b0526b80e7d9",
+    "revision": "9ccc492384cab94eef03",
     "url": "/react-tombola/static/css/main.a7a122c8.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-tombola/static/js/2.8cce9aa9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8b5e94c4b0526b80e7d9",
-    "url": "/react-tombola/static/js/main.03b818d1.chunk.js"
+    "revision": "9ccc492384cab94eef03",
+    "url": "/react-tombola/static/js/main.299e3324.chunk.js"
   },
   {
     "revision": "b639d0bb560b832df31e",
