@@ -24,6 +24,7 @@
         "settings": "Settings",
         "save": "Save",
         "draw":"DRAW",
-        "welcome": "Welcome!"
+        "welcome": "Welcome!",
+        "reset": "Reset "
     }
 }

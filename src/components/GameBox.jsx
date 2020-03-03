@@ -11,7 +11,7 @@ const GameBox = ({ gameNumber }) => {
   const drewNumbers = useSelector(state =>
     gameUtils.getNumbers(state.undoRedoManagement.present)
   );
-  console.log(drewNumbers);
+  //console.log(drewNumbers);
 
   const handleNumberClick = number => {
     //console.log(number);
@@ -61,14 +61,31 @@ const GameBox = ({ gameNumber }) => {
     );
   };
 
+  const GameBoxHeader = () => {
+
+    const checkedPrizes = useSelector(state => gameUtils.getCheckedPrizes(state.managePrizesSettings.prizes));
+    console.log("AVAILABLE_PRIZES", checkedPrizes);
+
+    const nextPrize = checkedPrizes.reduce((prev, curr) => prev.id < curr.id ? prev : curr);
+    console.log("NEXT_PRIZE", nextPrize);
+    //const availablePrizes
+
+    return (
+      <div className="card-title">
+        <h5 style={{ display: "inline-block" }}>
+          {t("game-page.actual-prize")}&nbsp;
+        </h5>
+        <h2 style={{ display: "inline-block" }}>
+          {t(`welcome-page.prizes.${nextPrize.name}`)}
+        </h2>
+      </div>
+    );
+  };
+
   return (
     <div className="card">
       <div className="card-header">
-        <div className="card-title">
-          <h2>
-            {t("game-page.actual-prize")}: {t("welcome-page.prizes.tombola")}
-          </h2>
-        </div>
+        <GameBoxHeader />
       </div>
       <div className="card-body">
         <div className="container-fluid">

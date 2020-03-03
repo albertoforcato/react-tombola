@@ -25,6 +25,13 @@ export const addDrewNumber = (drewNumber) => {
     }
 };
 
+export const addAssignedPrize = (assignedPrize) => {
+    return {
+        type: "ADD_ASSIGNED_PRIZE",
+        assignedPrize
+    }
+}
+
 export const switchInGameSettings = () => {
     return{
         type: "SWITCH_IN_GAME_SETTINGS"
