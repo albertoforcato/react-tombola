@@ -25,6 +25,7 @@
         "save": "Save",
         "draw":"DRAW",
         "welcome": "Welcome!",
-        "reset": "Reset "
+        "reset": "RESET THE GAME",
+        "award": "AWARD"
     }
 }

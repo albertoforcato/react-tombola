@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import { addDrewNumber } from "../actions/prizeAction";
+import { addDrewNumber, addAssignedPrize } from "../actions/prizeAction";
 import mathUtils from "../utils/mathUtils";
 import gameUtils from "../utils/gameUtils";
 
@@ -62,22 +62,46 @@ const GameBox = ({ gameNumber }) => {
   };
 
   const GameBoxHeader = () => {
+    const checkedPrizes = useSelector(state =>
+      gameUtils.getCheckedPrizes(state.managePrizesSettings.prizes)
+    );
+    console.log("CHECKED_PRIZES", checkedPrizes);
 
-    const checkedPrizes = useSelector(state => gameUtils.getCheckedPrizes(state.managePrizesSettings.prizes));
-    console.log("AVAILABLE_PRIZES", checkedPrizes);
+    const assignedPrizes = useSelector(state =>
+      gameUtils.getNotNumbers(state.undoRedoManagement.present)
+    );
+    console.log("ASSIGNED_PRIZES", assignedPrizes);
 
-    const nextPrize = checkedPrizes.reduce((prev, curr) => prev.id < curr.id ? prev : curr);
+    const availablePrizes = checkedPrizes.filter(
+      prize => !assignedPrizes.includes(prize)
+    );
+    console.log("AVAILABLE_PRIZES", availablePrizes);
+
+    const nextPrize = availablePrizes.reduce((prev, curr) =>
+      prev.id < curr.id ? prev : curr
+    );
     console.log("NEXT_PRIZE", nextPrize);
     //const availablePrizes
 
+    const handleAssignedPrizeClick = () => {
+      dispatch(addAssignedPrize(nextPrize));
+    };
+
     return (
       <div className="card-title">
-        <h5 style={{ display: "inline-block" }}>
-          {t("game-page.actual-prize")}&nbsp;
-        </h5>
-        <h2 style={{ display: "inline-block" }}>
-          {t(`welcome-page.prizes.${nextPrize.name}`)}
-        </h2>
+        <div className="container">
+          <div className="row justify-content-between ">
+            <h5 className="text-right">
+              {t("game-page.actual-prize")}
+            </h5>
+            <h2>
+              {t(`welcome-page.prizes.${nextPrize.name}`)}
+            </h2>
+            <button className="btn btn-info" onClick={handleAssignedPrizeClick}>
+              {t("generics.award")}
+            </button>
+          </div>
+        </div>
       </div>
     );
   };
