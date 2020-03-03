@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ActionCreators as UndoActionCreators } from "redux-undo";
 import { RotateCcw, RotateCw, Settings } from "react-feather";
 import { useTranslation } from "react-i18next";
+import { switchInGameSettings } from "../../actions/prizeAction";
 
 /**
  * This component contains the button to manage the entire game.
@@ -11,8 +12,10 @@ const ManagementButtons = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const canUndo = useSelector(state => state.drewNumbers.past.length) > 0;
-  const canRedo = useSelector(state => state.drewNumbers.future.length) > 0;
+  const canUndo =
+    useSelector(state => state.undoRedoManagement.past.length) > 0;
+  const canRedo =
+    useSelector(state => state.undoRedoManagement.future.length) > 0;
 
   /**
    * The UNDO button to manage the draw.
@@ -60,8 +63,7 @@ const ManagementButtons = () => {
    */
   const SettingButton = () => {
     const handleSettingsClick = () => {
-      //console.log("SETTINGS");
-      //props.toggle();
+      dispatch(switchInGameSettings());
     };
     return (
       <button className="btn btn-danger mx-1 my-1">

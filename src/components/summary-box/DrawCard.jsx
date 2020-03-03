@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addDrewNumber } from "../../actions/prizeAction";
 import mathUtils from "../../utils/mathUtils";
 import { useTranslation } from "react-i18next";
+import gameUtils from "../../utils/gameUtils";
 
 /**
  * The last drew number div style.
@@ -28,48 +29,49 @@ const StyledButton = styled.div`
 `;
 
 const SummaryBoxDrawFooter = () => {
-    const { t } = useTranslation();
-    const dispatch = useDispatch();
-    const drewNumbers = useSelector(state => state.drewNumbers.present);
-    const automaticDraw = useSelector(
-      state => state.managePrizesSettings.automaticDraw
-    );
-    const availableNumbers = useSelector(
-      state => state.manageDrewNumbers.availableNumbers
-    );
-  
-    const drawableNumbers = () => {
-      return availableNumbers.filter(el => !drewNumbers.includes(el));
-    };
-  
-    /**
-     * This function handle the automatic draw button.
-     */
-    const handleAutomaticDrawClick = () => {
-      let drewNumber = mathUtils.randomNumber(drawableNumbers());
-      dispatch(addDrewNumber(drewNumber));
-      // SET FUNCTION WITH TIMEOUT <- loading number: false
-    };
-  
-    return (
-      <button
-        className={`btn btn-success ${automaticDraw ? "" : "disabled"}`}
-        style={{ pointerEvents: automaticDraw ? "" : "none" }}
-        onClick={() => handleAutomaticDrawClick()}
-      >
-        {t("generics.draw")}
-      </button>
-    );
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const drewNumbers = useSelector(state =>
+    gameUtils.getNumbers(state.undoRedoManagement.present)
+  );
+  const automaticDraw = useSelector(
+    state => state.managePrizesSettings.automaticDraw
+  );
+  const availableNumbers = useSelector(
+    state => state.manageDrewNumbers.availableNumbers
+  );
+
+  const drawableNumbers = () => {
+    return availableNumbers.filter(el => !drewNumbers.includes(el));
   };
+
+  /**
+   * This function handle the automatic draw button.
+   */
+  const handleAutomaticDrawClick = () => {
+    let drewNumber = mathUtils.randomNumber(drawableNumbers());
+    dispatch(addDrewNumber(drewNumber));
+    // SET FUNCTION WITH TIMEOUT <- loading number: false
+  };
+
+  return (
+    <button
+      className={`btn btn-success ${automaticDraw ? "" : "disabled"}`}
+      style={{ pointerEvents: automaticDraw ? "" : "none" }}
+      onClick={() => handleAutomaticDrawClick()}
+    >
+      {t("generics.draw")}
+    </button>
+  );
+};
 
 const DrawCard = () => {
   const { t } = useTranslation();
   const [loadingNumber, setLoadingNumber] = useState(false);
-  const presentStateDrawNumbers = useSelector(
-    state => state.drewNumbers.present
+  const drewNumbers = useSelector(state =>
+    gameUtils.getNumbers(state.undoRedoManagement.present)
   );
-  const presentNumber =
-    presentStateDrawNumbers[presentStateDrawNumbers.length - 1];
+  const presentNumber = drewNumbers[drewNumbers.length - 1];
 
   return (
     <div className="card">

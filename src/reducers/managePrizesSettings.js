@@ -8,7 +8,7 @@ const initialState = {
     { id: 6, name: "tombolino", checked: true }
   ],
   automaticDraw: false,
-  firstView: true
+  showInGameSettings: false
 };
 
 const managePrizesSettings = (state = initialState, action) => {
@@ -34,10 +34,10 @@ const managePrizesSettings = (state = initialState, action) => {
         automaticDraw: !state.automaticDraw
       };
     }
-    case "CHANGE_FIRST_VIEW_TOGGLE":{
+    case "SWITCH_IN_GAME_SETTINGS":{
       return{
         ...state,
-        firstView: !state.firstView
+        showInGameSettings: !state.showInGameSettings
       };
     } 
     default: {

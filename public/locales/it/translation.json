@@ -22,6 +22,7 @@
         "start-the-game": "Inizia a giocare",
         "settings": "Impostazioni",
         "save": "Salva",
-        "draw":"ESTRAI"
+        "draw":"ESTRAI",
+        "welcome": "Benvenuto!"
     }
 }
