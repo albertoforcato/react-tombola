@@ -88,19 +88,27 @@ const GameBox = ({ gameNumber }) => {
     };
 
     return (
-      <div className="card-title">
-        <div className="container">
-          <div className="row justify-content-between ">
-            <h5 className="text-right">
-              {t("game-page.actual-prize")}
-            </h5>
-            <h2>
-              {t(`welcome-page.prizes.${nextPrize.name}`)}
-            </h2>
-            <button className="btn btn-info" onClick={handleAssignedPrizeClick}>
-              {t("generics.award")}
-            </button>
-          </div>
+      <div className="container">
+        <div className="row justify-content-between align-items-center">
+          <ul className="list-inline">
+            <li className="list-inline-item">
+              <h5 className="align-center text-muted">
+                {t("game-page.actual-prize")}
+              </h5>
+            </li>
+            <li className="list-inline-item">
+              <h2
+                className="align-center text-uppercase"
+                style={{ letterSpacing: "0.03em" }}
+              >
+                {t(`welcome-page.prizes.${nextPrize.name}`)}
+              </h2>
+            </li>
+          </ul>
+
+          <button className="btn btn-info" onClick={handleAssignedPrizeClick}>
+            {t("generics.award")}
+          </button>
         </div>
       </div>
     );
@@ -108,7 +116,7 @@ const GameBox = ({ gameNumber }) => {
 
   return (
     <div className="card">
-      <div className="card-header">
+      <div className="card-header border-0">
         <GameBoxHeader />
       </div>
       <div className="card-body">
