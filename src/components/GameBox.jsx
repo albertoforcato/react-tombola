@@ -27,7 +27,7 @@ const GameBox = ({ gameNumber }) => {
                 <button
                   className={`btn btn-outline-warning col mx-1 my-1 ${
                     drewNumbers.includes(item) ? "active none" : ""
-                  }`}
+                    }`}
                   key={item}
                   value={item}
                   onClick={() => handleNumberClick(item)}
@@ -35,7 +35,7 @@ const GameBox = ({ gameNumber }) => {
                     pointerEvents: drewNumbers.includes(item) ? "none" : ""
                   }}
                 >
-                  <div>{item}</div>
+                  <div style={{fontSize:"calc(1.5em * (9/16))", fontWeight:"bold"}}>{item}</div>
                 </button>
               ))}
             </div>
@@ -49,11 +49,9 @@ const GameBox = ({ gameNumber }) => {
     return (
       <>
         {array.map(box => (
-          <div className="col-md-6 my-1 col-12" key={`box-${box}`}>
-            <div className="card" key={box}>
-              <div className="card-body">
+          <div className="col-md-6 my-3 col-12" key={`box-${box}`}>
+            <div className="card border-0" key={box}>
                 <SingleItems array={mathUtils.chunkArray(box, 5)} />
-              </div>
             </div>
           </div>
         ))}
@@ -78,7 +76,7 @@ const GameBox = ({ gameNumber }) => {
     console.log("AVAILABLE_PRIZES", availablePrizes);
 
     const nextPrize = availablePrizes.reduce((prev, curr) =>
-      prev.id < curr.id ? prev : curr
+      prev.id < curr.id ? prev : curr, 0
     );
     console.log("NEXT_PRIZE", nextPrize);
     //const availablePrizes
@@ -86,6 +84,13 @@ const GameBox = ({ gameNumber }) => {
     const handleAssignedPrizeClick = () => {
       dispatch(addAssignedPrize(nextPrize));
     };
+
+    const emptyPrizesList = availablePrizes.length === 0;
+
+    /**
+     * Mandatory to prevent null award.
+     */
+    const canAward = availablePrizes.length > 1;
 
     return (
       <div className="container">
@@ -101,12 +106,12 @@ const GameBox = ({ gameNumber }) => {
                 className="align-center text-uppercase"
                 style={{ letterSpacing: "0.03em" }}
               >
-                {t(`welcome-page.prizes.${nextPrize.name}`)}
+                {emptyPrizesList ? t(`welcome-page.no-prize`) : t(`welcome-page.prizes.${nextPrize.name}`)}
               </h2>
             </li>
           </ul>
 
-          <button className="btn btn-info" onClick={handleAssignedPrizeClick}>
+          <button className="btn btn-info" onClick={handleAssignedPrizeClick} disabled={!canAward}>
             {t("generics.award")}
           </button>
         </div>

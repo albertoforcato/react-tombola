@@ -21,10 +21,10 @@ const TombolaGame = () => {
     <div className="d-flex justify-content-center align-items-md-center">
       <div className="container-fluid">
         <div className="row my-2">
-          <div className="col-xl-4 col-md-4 offset-md-0 col-12 order-md-1">
+          <div className="col-xl-4 col-lg-4 col-12 order-lg-1">
             <SummaryBox />
           </div>
-          <div className="col-xl-8 col-md-8 col-12 order-md-0">
+          <div className="col-xl-8 col-lg-8 col-12 order-lg-0">
             <GameBox gameNumber={gameNumber} />
           </div>
         </div>

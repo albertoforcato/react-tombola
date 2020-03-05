@@ -3,19 +3,21 @@ import { FaReact, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer mt-auto py-3">
-      <div className="container align-items-center">
+    <footer className="footer mt-auto py-3 bg-light text-white">
+      <div className="container justify-content-center">
         <span className="text-muted">
           Made with{" "}
-          <span href="https://it.reactjs.org/" className="text-decoration-none a">
+          <a href="https://it.reactjs.org/" target="_blank" rel="noopener noreferrer" className="text-decoration-none a">
             <FaReact />
-          </span>
-          . For other projects check my <FaGithub />{" "}
-          <a href="https://it.reactjs.org/" className="text-decoration-none">
+          </a>
+          .&nbsp;&nbsp;&nbsp;For other projects check my <FaGithub />{" "}
+          <a href="https://github.com/albertoforcato/" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
             GitHub
           </a>
-        </span>{" "}
-        repo.
+          {" "}repo.
+        </span>
+        <span>
+        </span>
       </div>
     </footer>
   );
