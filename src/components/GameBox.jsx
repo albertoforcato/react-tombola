@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import { addDrewNumber } from "../actions/prizeAction";
+import { addDrewNumber, addAssignedPrize } from "../actions/prizeAction";
 import mathUtils from "../utils/mathUtils";
 import gameUtils from "../utils/gameUtils";
 
@@ -11,7 +11,7 @@ const GameBox = ({ gameNumber }) => {
   const drewNumbers = useSelector(state =>
     gameUtils.getNumbers(state.undoRedoManagement.present)
   );
-  console.log(drewNumbers);
+  //console.log(drewNumbers);
 
   const handleNumberClick = number => {
     //console.log(number);
@@ -61,14 +61,63 @@ const GameBox = ({ gameNumber }) => {
     );
   };
 
+  const GameBoxHeader = () => {
+    const checkedPrizes = useSelector(state =>
+      gameUtils.getCheckedPrizes(state.managePrizesSettings.prizes)
+    );
+    console.log("CHECKED_PRIZES", checkedPrizes);
+
+    const assignedPrizes = useSelector(state =>
+      gameUtils.getNotNumbers(state.undoRedoManagement.present)
+    );
+    console.log("ASSIGNED_PRIZES", assignedPrizes);
+
+    const availablePrizes = checkedPrizes.filter(
+      prize => !assignedPrizes.includes(prize)
+    );
+    console.log("AVAILABLE_PRIZES", availablePrizes);
+
+    const nextPrize = availablePrizes.reduce((prev, curr) =>
+      prev.id < curr.id ? prev : curr
+    );
+    console.log("NEXT_PRIZE", nextPrize);
+    //const availablePrizes
+
+    const handleAssignedPrizeClick = () => {
+      dispatch(addAssignedPrize(nextPrize));
+    };
+
+    return (
+      <div className="container">
+        <div className="row justify-content-between align-items-center">
+          <ul className="list-inline">
+            <li className="list-inline-item">
+              <h5 className="align-center text-muted">
+                {t("game-page.actual-prize")}
+              </h5>
+            </li>
+            <li className="list-inline-item">
+              <h2
+                className="align-center text-uppercase"
+                style={{ letterSpacing: "0.03em" }}
+              >
+                {t(`welcome-page.prizes.${nextPrize.name}`)}
+              </h2>
+            </li>
+          </ul>
+
+          <button className="btn btn-info" onClick={handleAssignedPrizeClick}>
+            {t("generics.award")}
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="card">
-      <div className="card-header">
-        <div className="card-title">
-          <h2>
-            {t("game-page.actual-prize")}: {t("welcome-page.prizes.tombola")}
-          </h2>
-        </div>
+      <div className="card-header border-0">
+        <GameBoxHeader />
       </div>
       <div className="card-body">
         <div className="container-fluid">

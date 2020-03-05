@@ -76,7 +76,7 @@ const DrawCard = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center text-center">
           <h3 className="">{t("game-page.last-draw-number")}</h3>
         </div>
         <div className="row justify-content-center">

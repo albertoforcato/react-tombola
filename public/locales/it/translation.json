@@ -5,7 +5,7 @@
         "settings-checkbox-tip": "Seleziona i premi",
         "prizes": {
             "ambo": "Ambo",
-            "terna": "Terna",
+            "terno": "Terno",
             "quaterna": "Quaterna",
             "cinquina": "Cinquina",
             "tombola": "Tombola",
@@ -23,6 +23,8 @@
         "settings": "Impostazioni",
         "save": "Salva",
         "draw":"ESTRAI",
-        "welcome": "Benvenuto!"
+        "welcome": "Benvenuto!",
+        "award": "ASSEGNA",
+        "reset": "RIAVVIA IL GIOCO"
     }
 }

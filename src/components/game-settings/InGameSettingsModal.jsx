@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal } from "react-bootstrap";
-import GameSettings from "../initial-game-settings/GameSettings";
+import GameSettings from "./GameSettings";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { switchInGameSettings } from "../../actions/prizeAction";
