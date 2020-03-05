@@ -1,9 +1,7 @@
 {
     "welcome-page": {
-        "start-the-game": "START",
         "automatic-draw": "Automatic draw",
         "settings-checkbox-tip": "Select the prizes",
-        "setting-title": "Settings",
         "prizes": {
             "ambo": "Ambo",
             "terno": "Terno",
@@ -11,7 +9,8 @@
             "cinquina": "Cinquina",
             "tombola": "Tombola",
             "tombolino": "Tombolino"
-        }
+        },
+        "no-prize": "no prize"
     },
     "game-page": {
         "last-draw-number": "Last draw number",
@@ -19,11 +18,11 @@
         "go-back": "Go back",
         "go-forth": "Go forth"
     },
-    "generics":{
+    "generics": {
         "start-the-game": "START",
         "settings": "Settings",
         "save": "Save",
-        "draw":"DRAW",
+        "draw": "DRAW",
         "welcome": "Welcome!",
         "reset": "RESET THE GAME",
         "award": "AWARD"
