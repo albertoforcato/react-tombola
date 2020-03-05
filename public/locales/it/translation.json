@@ -1,6 +1,5 @@
 {
     "welcome-page": {
-        
         "automatic-draw": "Estrazione automatica",
         "settings-checkbox-tip": "Seleziona i premi",
         "prizes": {
@@ -10,7 +9,8 @@
             "cinquina": "Cinquina",
             "tombola": "Tombola",
             "tombolino": "Tombolino"
-        }
+        },
+        "no-prize": "nessun premio"
     },
     "game-page": {
         "last-draw-number": "Ultimo numero estratto",
@@ -18,11 +18,11 @@
         "go-back": "Torna indietro",
         "go-forth": "Vai avanti"
     },
-    "generics":{
+    "generics": {
         "start-the-game": "Inizia a giocare",
         "settings": "Impostazioni",
         "save": "Salva",
-        "draw":"ESTRAI",
+        "draw": "ESTRAI",
         "welcome": "Benvenuto!",
         "award": "ASSEGNA",
         "reset": "RIAVVIA IL GIOCO"

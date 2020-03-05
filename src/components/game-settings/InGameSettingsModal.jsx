@@ -17,6 +17,11 @@ const InGameSettingsModal = () => {
     dispatch(switchInGameSettings());
   };
 
+  const handleResetGameClick = () => {
+    window.location.reload();
+    return false;
+  }
+
   return (
     <Modal show={showInGameSettings} backdrop={`static`} size="lg" centered>
       <Modal.Header>
@@ -26,13 +31,12 @@ const InGameSettingsModal = () => {
         <GameSettings />
       </Modal.Body>
       <Modal.Footer>
-          <div className="container">
-              <div className="row justify-content-between">
-              <button className="btn btn-outline-danger" onClick={handleSaveClick}>{t("generics.reset")}</button>
-              <button className="btn btn-primary" onClick={handleSaveClick}>{t("generics.save")}</button>
-              </div>
+        <div className="container">
+          <div className="row justify-content-between">
+            <button className="btn btn-outline-danger" onClick={handleResetGameClick}>{t("generics.reset")}</button>
+            <button className="btn btn-primary" onClick={handleSaveClick}>{t("generics.save")}</button>
           </div>
-        
+        </div>
       </Modal.Footer>
     </Modal>
   );

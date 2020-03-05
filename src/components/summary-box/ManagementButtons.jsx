@@ -66,11 +66,15 @@ const ManagementButtons = () => {
       dispatch(switchInGameSettings());
     };
     return (
-      <button className="btn btn-danger mx-1 my-1">
+      <button className="btn btn-danger mx-1 my-1"
+        data-toggle="settings-button"
+        title={t("generics.settings")}
+      >
         <Settings
           size="20"
           color="white"
           onClick={() => handleSettingsClick()}
+
         />
       </button>
     );

@@ -12,8 +12,10 @@ import gameUtils from "../../utils/gameUtils";
 const StyledButton = styled.div`
   pointer-events: none;
   position: relative;
-  width: 50%;
-  padding-bottom: 50%;
+  width: calc(50% * (9/16));
+  padding-bottom: calc(50% * (9/16));
+  
+
   border-radius: 50%;
   color: #fff;
   background-color: #007bff;
@@ -23,7 +25,7 @@ const StyledButton = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 6vw;
+    font-size: calc(5em *(9/16));
     transform: translate(-50%, -50%);
   }
 `;
@@ -67,7 +69,7 @@ const SummaryBoxDrawFooter = () => {
 
 const DrawCard = () => {
   const { t } = useTranslation();
-  const [loadingNumber, setLoadingNumber] = useState(false);
+  const [loadingNumber] = useState(false);
   const drewNumbers = useSelector(state =>
     gameUtils.getNumbers(state.undoRedoManagement.present)
   );
@@ -77,7 +79,7 @@ const DrawCard = () => {
     <div className="card">
       <div className="card-body">
         <div className="row justify-content-center text-center">
-          <h3 className="">{t("game-page.last-draw-number")}</h3>
+          <h3>{t("game-page.last-draw-number")}</h3>
         </div>
         <div className="row justify-content-center">
           <StyledButton className="my-4">
