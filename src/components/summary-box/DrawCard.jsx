@@ -69,7 +69,7 @@ const SummaryBoxDrawFooter = () => {
 
 const DrawCard = () => {
   const { t } = useTranslation();
-  const [loadingNumber, setLoadingNumber] = useState(false);
+  const [loadingNumber] = useState(false);
   const drewNumbers = useSelector(state =>
     gameUtils.getNumbers(state.undoRedoManagement.present)
   );
