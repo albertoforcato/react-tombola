@@ -2,9 +2,13 @@ import React from "react";
 import AutomaticDrawSwitch from "./AutomaticDrawSwitch";
 import CheckboxPrizesList from "./CheckboxPrizesList";
 import { useTranslation } from "react-i18next";
+
+/**
+ * The game settings component, contains the prizes checkboxes and the automatic draw switch.
+ */
 const GameSettings = () => {
   const { t } = useTranslation();
-  
+
   return (
     <form>
       <div className="form-group">

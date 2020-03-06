@@ -5,6 +5,9 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { switchInGameSettings } from "../../actions/prizeAction";
 
+/**
+ * The modal to show the in-game settings.
+ */
 const InGameSettingsModal = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();

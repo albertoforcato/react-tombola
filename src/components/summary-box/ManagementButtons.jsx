@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { switchInGameSettings } from "../../actions/prizeAction";
 
 /**
- * This component contains the button to manage the entire game.
+ * This component contains the buttons to manage the entire game.
  */
 const ManagementButtons = () => {
   const dispatch = useDispatch();

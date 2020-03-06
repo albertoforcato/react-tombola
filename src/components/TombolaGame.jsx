@@ -1,22 +1,13 @@
 import SummaryBox from "./summary-box/SummaryBox";
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addInitialNumbers } from "../actions/prizeAction";
-import mathUtils from "../utils/mathUtils";
-import GameBox from "./GameBox";
+import React from "react";
+import GameBox from "./game-box/GameBox";
 import InitialGameSettingsModal from "./game-settings/InitialGameSettingsModal";
 import InGameSettingsModal from "./game-settings/InGameSettingsModal";
 
+/**
+ * The main component of the game.
+ */
 const TombolaGame = () => {
-  const dispatch = useDispatch();
-
-  const initialNumbers = mathUtils.range(1, 90);
-  const gameNumber = mathUtils.chunkArray(initialNumbers, 15);
-
-  useEffect(() => {
-    dispatch(addInitialNumbers(initialNumbers));
-  });
-
   return (
     <div className="d-flex justify-content-center align-items-md-center">
       <div className="container-fluid">
@@ -25,7 +16,7 @@ const TombolaGame = () => {
             <SummaryBox />
           </div>
           <div className="col-xl-8 col-lg-8 col-12 order-lg-0">
-            <GameBox gameNumber={gameNumber} />
+            <GameBox />
           </div>
         </div>
         <InitialGameSettingsModal />

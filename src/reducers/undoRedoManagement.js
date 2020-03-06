@@ -15,7 +15,7 @@ const drewNumber = (state, action) => {
 const drewPrize = (state, action) => {
   switch (action.type) {
     case "ADD_ASSIGNED_PRIZE":
-      console.log("ASSIGNED_PRIZE", action.assignedPrize);
+      //console.log("ASSIGNED_PRIZE", action.assignedPrize);
       return action.assignedPrize;
     default:
       return state;

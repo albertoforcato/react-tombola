@@ -15,7 +15,6 @@ const StyledButton = styled.div`
   width: calc(50% * (9/16));
   padding-bottom: calc(50% * (9/16));
   
-
   border-radius: 50%;
   color: #fff;
   background-color: #007bff;
