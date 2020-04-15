@@ -1,5 +1,6 @@
 # Italian Tombola!
-This is my first react application created to improve my JavaScript coding experience and learn how to use [React](https://reactjs.org/).
+This is my first react application created to improve my JavaScript coding skill and learn how to use [React](https://reactjs.org/).
+DEMO [Tombola!](https://albertoforcato.github.io/react-tombola/). 
 
 ## Installation
 Download the repository and run `npm install` to download the necessary node modules.<br />
