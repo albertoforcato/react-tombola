@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-tombola/static/css/main.f86c9d99.chunk.css",
-    "main.js": "/react-tombola/static/js/main.c4561a1b.chunk.js",
-    "main.js.map": "/react-tombola/static/js/main.c4561a1b.chunk.js.map",
+    "main.css": "/react-tombola/static/css/main.622549d3.chunk.css",
+    "main.js": "/react-tombola/static/js/main.cdea6586.chunk.js",
+    "main.js.map": "/react-tombola/static/js/main.cdea6586.chunk.js.map",
     "runtime-main.js": "/react-tombola/static/js/runtime-main.821cdeeb.js",
     "runtime-main.js.map": "/react-tombola/static/js/runtime-main.821cdeeb.js.map",
-    "static/css/2.67123b20.chunk.css": "/react-tombola/static/css/2.67123b20.chunk.css",
-    "static/js/2.673b4cdb.chunk.js": "/react-tombola/static/js/2.673b4cdb.chunk.js",
-    "static/js/2.673b4cdb.chunk.js.map": "/react-tombola/static/js/2.673b4cdb.chunk.js.map",
+    "static/css/2.cbdddf7c.chunk.css": "/react-tombola/static/css/2.cbdddf7c.chunk.css",
+    "static/js/2.0b94c19e.chunk.js": "/react-tombola/static/js/2.0b94c19e.chunk.js",
+    "static/js/2.0b94c19e.chunk.js.map": "/react-tombola/static/js/2.0b94c19e.chunk.js.map",
     "index.html": "/react-tombola/index.html",
-    "precache-manifest.6efdfb1f00eeeb8749293f38288cad1e.js": "/react-tombola/precache-manifest.6efdfb1f00eeeb8749293f38288cad1e.js",
+    "precache-manifest.d9dbc7c10b5fc0eaa459b715fde3983d.js": "/react-tombola/precache-manifest.d9dbc7c10b5fc0eaa459b715fde3983d.js",
     "service-worker.js": "/react-tombola/service-worker.js",
-    "static/css/2.67123b20.chunk.css.map": "/react-tombola/static/css/2.67123b20.chunk.css.map",
-    "static/css/main.f86c9d99.chunk.css.map": "/react-tombola/static/css/main.f86c9d99.chunk.css.map",
-    "static/js/2.673b4cdb.chunk.js.LICENSE.txt": "/react-tombola/static/js/2.673b4cdb.chunk.js.LICENSE.txt"
+    "static/css/2.cbdddf7c.chunk.css.map": "/react-tombola/static/css/2.cbdddf7c.chunk.css.map",
+    "static/css/main.622549d3.chunk.css.map": "/react-tombola/static/css/main.622549d3.chunk.css.map",
+    "static/js/2.0b94c19e.chunk.js.LICENSE.txt": "/react-tombola/static/js/2.0b94c19e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.821cdeeb.js",
-    "static/css/2.67123b20.chunk.css",
-    "static/js/2.673b4cdb.chunk.js",
-    "static/css/main.f86c9d99.chunk.css",
-    "static/js/main.c4561a1b.chunk.js"
+    "static/css/2.cbdddf7c.chunk.css",
+    "static/js/2.0b94c19e.chunk.js",
+    "static/css/main.622549d3.chunk.css",
+    "static/js/main.cdea6586.chunk.js"
   ]
 }
